@@ -1,8 +1,14 @@
 const express = require("express");
+const cors = require("cors");
+
 const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
+
+/** 모든 도메인에서의 요청을 허용 */
+app.use(cors());
+
 const port = process.env.PORT || 3000;
 
 // 네이버 API 클라이언트 정보
