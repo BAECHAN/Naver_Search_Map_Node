@@ -7,7 +7,12 @@ require("dotenv").config();
 const app = express();
 
 /** 모든 도메인에서의 요청을 허용 */
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
 
 const port = process.env.PORT || 3000;
 
